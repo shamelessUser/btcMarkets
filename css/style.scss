@@ -8,13 +8,17 @@ $primary: #4CFDC7;
 $red: #F43F5E;
 $darkGrey: #71717A;
 $lightGrey: #A1A1AA;
+$grayBorder: #F4F4F5;
+$green: #10B981;
 
 $tablet: 1024px;
 $mobileL: 768px;
 $mobileM: 580px;
 $mobileS: 480px;
+$mobileXS: 380px;
 
 $br: 4px;
+$tablePadding: 16px 0px;
 
 @font-face {
     font-family: "regular";
@@ -149,6 +153,22 @@ nav {
                 }
             }
         }
+
+       /*  @media screen and (max-width: $mobileXS) {
+          .nav__items {
+            .mobile__menu__btn {
+              svg {
+                width: 30px;
+              }
+            }
+
+            .nav__btns {
+              button {
+                padding: 6px 12px;
+              }
+            }
+          }
+        } */
     }
 }
 
@@ -247,6 +267,156 @@ header {
     }
   }
 }
+
+main {
+  .markets__section {
+    .markets {
+      box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 32px;
+
+      .markets__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+
+        h4 {
+          font-weight: 400;
+          color: $darkGrey;
+          cursor: pointer;
+
+          &.active {
+            color: $firstBlack;
+          }
+        }
+      }
+
+      .markets__table {
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        table {
+          border-collapse: collapse;
+          width: 1072px;
+
+          tbody {
+            tr {
+              border-bottom: 1px solid $grayBorder;
+
+              th {
+                padding: $tablePadding;
+                text-align: left;
+                color: $firstBlack;
+                font-weight: 400;
+                font-size: 14px;
+                border-top: 1px solid $grayBorder;
+              }
+
+              td {
+                padding: $tablePadding;
+                color: $firstBlack;
+                font-weight: 400;
+                
+                span {
+                  &.aud {
+                    color: $lightGrey;
+                    font-size: 16px;
+                    vertical-align: super;
+                  }
+
+                  &.up {
+                    color: $green;
+                  }
+
+                  &.down {
+                    color: $red;
+                  }
+                }
+
+                &:nth-child(1), &:nth-child(3) {
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                }
+
+                a {
+                  display: block;
+                  text-decoration: none;
+                  padding: $tablePadding;
+                  background: $primary;
+                  border-radius: $br;
+                  color: $greenBlack;
+                  cursor: pointer;
+                  text-align: center;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .markets_view_all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+
+        a {
+          color:$firstBlack;
+          text-decoration: none;
+        }
+      }
+
+      @media screen and (max-width: $mobileXS) {
+        .markets__nav {
+          flex-wrap: wrap;
+          margin-bottom: 16px;
+          gap: 16px;
+
+          h4 {
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+
+      @media screen and (max-width: 410px) {
+        .markets_view_all {
+          flex-wrap: wrap;
+
+          svg:first-child {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//scroll for opera & chrome
+::-webkit-scrollbar-track {
+	background-color: #fff; /*Цвет скролла*/
+} 
+::-webkit-scrollbar-thumb { 
+	border-radius: 5px; /*Закругление ползунка*/
+	background-color: #ccc; /*Цвет ползунка*/
+} 
+::-webkit-scrollbar { 
+	width: 6px;  /*Толщина скролла*/
+}
+
+//scroll for firefox
+* {
+	scrollbar-color: #ccc #fff; /*Цвет скролла, цвет ползунка*/
+	scrollbar-width: thin; /*Толщина скролла thin, auto*/
+}
+
 
 //normalize css
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
