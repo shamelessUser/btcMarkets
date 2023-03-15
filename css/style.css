@@ -236,7 +236,7 @@ main .markets__section .markets .markets__table {
 }
 main .markets__section .markets .markets__table table {
   border-collapse: collapse;
-  width: 1072px;
+  width: 100%;
 }
 main .markets__section .markets .markets__table table tbody tr {
   border-bottom: 1px solid #F4F4F5;
@@ -281,6 +281,11 @@ main .markets__section .markets .markets__table table tbody tr td a {
   text-align: center;
   font-size: 12px;
 }
+@media screen and (max-width: 768px) {
+  main .markets__section .markets .markets__table table {
+    width: 800px;
+  }
+}
 main .markets__section .markets .markets_view_all {
   display: flex;
   justify-content: center;
@@ -292,7 +297,7 @@ main .markets__section .markets .markets_view_all a {
   color: #18181B;
   text-decoration: none;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 460px) {
   main .markets__section .markets .markets__nav {
     flex-wrap: wrap;
     margin-bottom: 16px;
@@ -303,13 +308,110 @@ main .markets__section .markets .markets_view_all a {
     width: 100%;
     text-align: center;
   }
-}
-@media screen and (max-width: 410px) {
   main .markets__section .markets .markets_view_all {
     flex-wrap: wrap;
   }
   main .markets__section .markets .markets_view_all svg:first-child {
     width: 100%;
+  }
+}
+main .markets__section .why__btc__markets {
+  margin-top: 64px;
+}
+main .markets__section .why__btc__markets h2 {
+  text-align: center;
+  font-size: min(48px, max(25px + 2vw));
+  font-weight: 400;
+  margin: 0px;
+}
+main .markets__section .why__btc__markets .wbm__items {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-top: 128px;
+}
+main .markets__section .why__btc__markets .wbm__items .wbm__item {
+  text-align: center;
+  max-width: 275px;
+}
+main .markets__section .why__btc__markets .wbm__items .wbm__item .wbm__icon {
+  margin-bottom: 32px;
+}
+main .markets__section .why__btc__markets .wbm__items .wbm__item h4 {
+  margin: 0px;
+  color: #18181B;
+  font-weight: 400;
+  font-size: 20px;
+}
+main .markets__section .why__btc__markets .wbm__items .wbm__item p {
+  color: #27272A;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+@media screen and (max-width: 768px) {
+  main .markets__section .why__btc__markets .wbm__items {
+    flex-wrap: wrap;
+    margin-top: 64px;
+  }
+}
+main .trade__section h4 {
+  color: #18181B;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+}
+main .trade__section .trade__section__blocks {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+main .trade__section .trade__section__blocks .trade__section__left {
+  flex: 1 1 550px;
+}
+main .trade__section .trade__section__blocks .trade__section__left h2 {
+  font-size: min(40px, max(20px + 2vw));
+  color: #18181B;
+  font-weight: 400;
+}
+main .trade__section .trade__section__blocks .trade__section__left .trade__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 64px;
+  gap: 32px;
+}
+main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item {
+  flex: 1 1 33.3333333333%;
+}
+main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item h6 {
+  font-size: 16px;
+  color: #18181B;
+  font-weight: 400;
+  margin: 8px 0px 16px 0px;
+}
+main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item p {
+  color: #27272A;
+  font-size: 15px;
+  line-height: 24px;
+}
+main .trade__section .trade__section__blocks .trade__section__right {
+  flex: 1 1 550px;
+}
+@media screen and (max-width: 1024px) {
+  main .trade__section .trade__section__blocks {
+    flex-wrap: wrap;
+  }
+  main .trade__section .trade__section__blocks .trade__section__right .trade__section__right__img img {
+    width: 100%;
+    display: block;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .trade__section .trade__section__blocks .trade__section__left h2 {
+    text-align: center;
+  }
+  main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item {
+    flex: 1 1 100%;
+    text-align: center;
   }
 }
 
