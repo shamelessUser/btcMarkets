@@ -10,6 +10,7 @@ $darkGrey: #71717A;
 $lightGrey: #A1A1AA;
 $grayBorder: #F4F4F5;
 $green: #10B981;
+$dateGreen:#BDFFEB;
 
 $tablet: 1024px;
 $mobileL: 768px;
@@ -640,6 +641,406 @@ main {
         img {
           display: block;
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .start__trading__section {
+    margin-top: 128px;
+
+    .start__trading__section__content {
+      max-width: 950px;
+      margin: 0px auto;
+      text-align: center;
+
+      h2 {
+        max-width: 395px;
+        margin: 0px auto 96px auto;
+        color: $nativblack;
+        font-weight: 400;
+        font-size: min(48px, max(24px + 2vw));
+        line-height: 48px;
+        letter-spacing: 1px;
+      }
+
+      .start__trading__section__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .start__trading__section__item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 16px;
+
+          &:nth-of-type(1) {
+            p {
+              max-width: 222px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            p {
+              font-size: 15px;
+              max-width: 255px;
+            }
+          }
+
+          h5 {
+            margin: 0px;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+          }
+
+          p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            max-width: 250px;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        margin: 48px auto 32px auto;
+        color: $greenBlack;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        background: $primary;
+        padding: 9px 32px 9px 32px;
+        width: fit-content;
+        border-radius: $br;
+      }
+
+      .start__trading__section__stars {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.2px;
+        color: $secondBlack;
+      }
+    }
+
+    @media screen and (max-width: $mobileL) {
+      margin-top: 64px;
+      
+      .start__trading__section__content {
+        h2 {
+          margin-bottom: 48px;
+        }
+
+        .start__trading__section__items {
+          gap: 32px;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileM) {
+      .start__trading__section__content {
+        .start__trading__section__items {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .markets__app__section {
+    border-bottom: 1px solid #D4D4D8;
+
+    .markets__app__content {
+      margin-top: 320px;
+
+      h2 {
+        font-weight: 400;
+        font-size: min(50px, max(25px + 2vw));
+        line-height: 48px;
+        letter-spacing: 1px;
+        color: $nativblack;
+        margin: 0px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: $secondBlack;
+        max-width: 520px;
+        margin: 24px 0px 30px 0px;
+      }
+
+      a {
+        display: block;
+        font-size: 16px;
+        line-height: 20px;
+        text-decoration: none;
+        color: $firstBlack;
+        margin-bottom: 104px;
+      }
+
+      .markets__app__rating__items {
+        display: flex;
+        gap: 32px;
+
+        .markets__app__rating__item {
+          img {
+            display: block;
+          }
+
+          .markets__app__rating__stars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0px 32px 0px;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0.2px;
+            color: $secondBlack;
+          }
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        margin-top: 160px;
+      }
+
+      @media screen and (max-width: $mobileL) {
+        margin-top: 40px;
+        text-align: center;
+
+        p {
+          margin: 16px auto 24px auto;
+        }
+
+        a {
+          margin-bottom: 24px;
+        }
+
+        .markets__app__rating__items {
+          justify-content: center;
+        }
+      }
+
+      @media screen and (max-width: $mobileXS) {
+        .markets__app__rating__items {
+          flex-wrap: wrap;
+          gap: 8px;
+
+          .markets__app__rating__item {
+            .markets__app__rating__stars {
+              margin: 12px 0px 12px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .news__section {
+    margin-top: 128px;
+
+    h3 {
+      font-weight: 400;
+      font-size: min(31px, max(16px + 2vw));
+      line-height: 40px;
+      letter-spacing: 0.1px;
+      margin: 0px 0px 64px 0px;
+      text-align: center;
+    }
+
+    .news__section__items {
+      display: flex;
+      gap: 32px;
+      
+      .news__section__item {
+        height: 344px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
+        border-radius: 8px;
+
+        img {
+          display: block;
+        }
+
+        .news__section__item__content {
+          padding-left: 16px;
+
+          .news__section__item__content__date {
+            p {
+              display: inline-block;
+              gap: 16px;
+              font-size: 12px;
+              line-height: 12px;
+              color: $firstBlack;
+              margin: 16px 0px 20px 0px;
+
+              &:nth-child(1) {
+                background: $dateGreen;
+                padding: 2px 8px 6px 8px;
+              }
+  
+              &:nth-child(2) {
+                margin-left: 16px;
+                letter-spacing: 1px;
+              }
+            }
+          }
+
+          .news__section__item__content__bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 142px;
+
+            h4 {
+              font-weight: 400;
+              font-size: min(24px, max(13px + 2vw));
+              line-height: 30px;
+              margin: 0px;
+              color: $firstBlack;
+              max-width: 342px;
+            }
+    
+            a {
+              display: block;
+              text-decoration: none;
+              color: $firstBlack;
+              font-size: 16px;
+              line-height: 20px;
+              margin-bottom: 32px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media screen and (max-width: $mobileXS) {
+        img {
+          width: 100%;
+        }
+
+        .news__section__item {
+          height: 272px;
+          .news__section__item__content {
+            .news__section__item__content__bottom {
+              height: 96px;
+
+              a {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: $firstBlack;
+      text-align: center;
+      margin: 64px 0px 64px 0px;
+    }
+
+    .news__section__social {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+
+      .news__section__social__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        a {
+          display: block;
+          font-size: 15px;
+          line-height: 20px;
+          color: $firstBlack;
+          text-decoration: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileL) {
+      margin-top: 40px;
+
+      h3 {
+        margin-bottom: 32px;
+      }
+
+      h5 {
+        margin: 32px 0px 16px 0px;
+      }
+
+      .news__section__social {
+        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: calc(100%/2.8);
+      }
+    }
+  }
+
+  .create__account__section {
+    .create__account__content {
+      h2 {
+        font-weight: 400;
+        font-size: min(46px, max(23px + 2vw));
+        line-height: 48px;
+        letter-spacing: 1px;
+        color: $nativblack;
+        max-width: 430px;
+        margin: 240px 0px 36px 56px;
+      }
+
+      a {
+        display: block;
+        font-style: 16px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: $greenBlack;
+        background-color: $primary;
+        text-decoration: none;
+        margin-left: 56px;
+        padding: 10px 32px;
+        width: fit-content;
+        border-radius: $br;
+      }
+
+      @media screen and (max-width: $tablet) {
+        h2 {
+          margin: 120px auto 36px auto;
+          text-align: center;
+        }
+
+        a {
+          margin: 0px auto;
+        }
+      }
+
+      @media screen and (max-width: $mobileL) {
+        h2 {
+          margin: 40px auto 18px auto;
+          text-align: center;
         }
       }
     }
