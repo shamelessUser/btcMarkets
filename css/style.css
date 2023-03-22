@@ -6,6 +6,18 @@
 body {
   font-family: "regular", sans-serif;
 }
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+  background: #888;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 .container {
   max-width: 1200px;
@@ -59,6 +71,24 @@ nav .nav .nav__items .nav__menu li {
 nav .nav .nav__items .nav__menu li a {
   color: #18181B;
   text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+nav .nav .nav__items .nav__menu li a::before {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #10B981;
+  position: absolute;
+  bottom: -5px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+nav .nav .nav__items .nav__menu li a:hover {
+  color: #10B981;
+}
+nav .nav .nav__items .nav__menu li a:hover::before {
+  width: 100%;
 }
 nav .nav .nav__items .nav__btns {
   display: flex;
@@ -70,15 +100,26 @@ nav .nav .nav__items .nav__btns button {
   cursor: pointer;
   color: #18181B;
   font-size: 12px;
+  transition: 0.4s;
 }
 nav .nav .nav__items .nav__btns button#login {
   border: 1px solid #18181B;
   background: transparent;
 }
+nav .nav .nav__items .nav__btns button#login:hover {
+  background: #01271C;
+  border-color: #01271C;
+  color: #fff;
+}
 nav .nav .nav__items .nav__btns button#signup {
   border: 1px solid #4CFDC7;
   background: #4CFDC7;
   color: #01271C;
+}
+nav .nav .nav__items .nav__btns button#signup:hover {
+  background: #10B981;
+  border-color: #10B981;
+  color: #fff;
 }
 nav .nav .nav__items .nav__btns button#loginMobile {
   display: none;
@@ -86,12 +127,28 @@ nav .nav .nav__items .nav__btns button#loginMobile {
   border: 1px solid #18181B;
   background: transparent;
 }
+nav .nav .nav__items .nav__btns button#loginMobile:hover {
+  background: #01271C;
+  border-color: #01271C;
+  color: #fff;
+}
+nav .nav .nav__items .nav__btns button#loginMobile:hover svg path {
+  fill: #fff;
+}
 nav .nav .nav__items .nav__btns button#signupMobile {
   display: none;
   padding: 0px 17px;
   border: 1px solid #4CFDC7;
   background: #4CFDC7;
   color: #01271C;
+}
+nav .nav .nav__items .nav__btns button#signupMobile:hover {
+  background: #10B981;
+  border-color: #10B981;
+  color: #fff;
+}
+nav .nav .nav__items .nav__btns button#signupMobile:hover svg path {
+  fill: #fff;
 }
 @media screen and (max-width: 890px) {
   nav .nav .logo svg {
@@ -172,15 +229,26 @@ header .header .header__left .header__left__btns a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  transition: 0.4s;
 }
 header .header .header__left .header__left__btns a:nth-child(1) {
   background: #4CFDC7;
   color: #01271C;
 }
+header .header .header__left .header__left__btns a:nth-child(1):hover {
+  background: #10B981;
+  border-color: #10B981;
+  color: #fff;
+}
 header .header .header__left .header__left__btns a:nth-child(2) {
   background: transparent;
   color: #18181B;
   border: 1px solid #18181B;
+}
+header .header .header__left .header__left__btns a:nth-child(2):hover {
+  background: #01271C;
+  border-color: #01271C;
+  color: #fff;
 }
 header .header .header__left .header__left__stars {
   display: flex;
@@ -252,6 +320,18 @@ main .markets__section .markets .markets__table {
   overflow-y: hidden;
   overflow-x: auto;
 }
+main .markets__section .markets .markets__table::-webkit-scrollbar {
+  height: 8px;
+}
+main .markets__section .markets .markets__table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+main .markets__section .markets .markets__table::-webkit-scrollbar-thumb {
+  background: #888;
+}
+main .markets__section .markets .markets__table::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 main .markets__section .markets .markets__table table {
   border-collapse: collapse;
   width: 100%;
@@ -298,6 +378,13 @@ main .markets__section .markets .markets__table table tbody tr td a {
   cursor: pointer;
   text-align: center;
   font-size: 12px;
+  transition: 0.4s;
+  margin: 0px 0px 0px auto;
+}
+main .markets__section .markets .markets__table table tbody tr td a:hover {
+  background: #10B981;
+  border-color: #10B981;
+  color: #fff;
 }
 @media screen and (max-width: 768px) {
   main .markets__section .markets .markets__table table {
@@ -305,13 +392,17 @@ main .markets__section .markets .markets__table table tbody tr td a {
   }
 }
 main .markets__section .markets .markets_view_all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
   margin-top: 20px;
 }
 main .markets__section .markets .markets_view_all a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
   color: #18181B;
   text-decoration: none;
 }
@@ -326,7 +417,7 @@ main .markets__section .markets .markets_view_all a {
     width: 100%;
     text-align: center;
   }
-  main .markets__section .markets .markets_view_all {
+  main .markets__section .markets .markets_view_all a {
     flex-wrap: wrap;
   }
   main .markets__section .markets .markets_view_all svg:first-child {
@@ -531,6 +622,12 @@ main .vip__program__section .container .vip__program__section__content a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  transition: 0.4s;
+}
+main .vip__program__section .container .vip__program__section__content a:hover {
+  background: #01271C;
+  border-color: #01271C;
+  color: #fff;
 }
 main .vip__program__section .container .vip__program__section__cover img {
   display: block;
@@ -608,6 +705,12 @@ main .start__trading__section .start__trading__section__content a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  transition: 0.4s;
+}
+main .start__trading__section .start__trading__section__content a:hover {
+  background: #10B981;
+  border-color: #10B981;
+  color: #fff;
 }
 main .start__trading__section .start__trading__section__content .start__trading__section__stars {
   display: flex;
@@ -665,6 +768,18 @@ main .markets__app__section .markets__app__content a {
   text-decoration: none;
   color: #18181B;
   margin-bottom: 104px;
+  border: 1px solid #18181B;
+  border-radius: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 9px 33px;
+  transition: 0.3s;
+}
+main .markets__app__section .markets__app__content a:hover {
+  background: #01271C;
+  border-color: #01271C;
+  color: #fff;
 }
 main .markets__app__section .markets__app__content .markets__app__rating__items {
   display: flex;
@@ -732,6 +847,7 @@ main .news__section .news__section__items .news__section__item {
   background: #FFFFFF;
   box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
   border-radius: 8px;
+  transition: all 0.3s;
 }
 main .news__section .news__section__items .news__section__item .news__section__item__cover {
   width: 357px;
@@ -744,6 +860,7 @@ main .news__section .news__section__items .news__section__item .news__section__i
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s;
 }
 main .news__section .news__section__items .news__section__item .news__section__item__content {
   padding-left: 16px;
@@ -784,6 +901,18 @@ main .news__section .news__section__items .news__section__item .news__section__i
   line-height: 20px;
   margin-bottom: 28px;
 }
+main .news__section .news__section__items .news__section__item:hover {
+  box-shadow: 8px 8px 16px rgba(9, 24, 26, 0.3);
+}
+main .news__section .news__section__items .news__section__item:hover .news__section__item__cover img {
+  transform: scale(1.1);
+}
+main .news__section .news__section__items .news__section__item:hover .news__section__item__content__bottom h4 a {
+  color: #01271C;
+}
+main .news__section .news__section__items .news__section__item:hover .news__section__item__content__bottom a {
+  color: #10B981;
+}
 @media screen and (max-width: 1200px) {
   main .news__section .news__section__items {
     flex-wrap: wrap;
@@ -798,15 +927,22 @@ main .news__section .news__section__items .news__section__item .news__section__i
 }
 main .news__section h5 {
   font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  color: #18181B;
   text-align: center;
   margin: 64px 0px 64px 0px;
+}
+main .news__section h5 a {
+  text-decoration: none;
+  color: #18181B;
+  line-height: 20px;
+  font-size: 15px;
+}
+main .news__section h5 a:hover {
+  text-decoration: underline;
 }
 main .news__section .news__section__social {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 32px;
 }
 main .news__section .news__section__social .news__section__social__item a {
@@ -817,6 +953,16 @@ main .news__section .news__section__social .news__section__social__item a {
   line-height: 20px;
   color: #18181B;
   text-decoration: none;
+  transition: 0.4s;
+}
+main .news__section .news__section__social .news__section__social__item a svg path {
+  transition: 0.3s;
+}
+main .news__section .news__section__social .news__section__social__item a:hover {
+  color: #10B981;
+}
+main .news__section .news__section__social .news__section__social__item a:hover svg path {
+  fill: #10B981;
 }
 @media screen and (max-width: 768px) {
   main .news__section {
@@ -860,6 +1006,12 @@ main .create__account__section .create__account__content a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  transition: 0.4s;
+}
+main .create__account__section .create__account__content a:hover {
+  background: #10B981;
+  border-color: #10B981;
+  color: #fff;
 }
 @media screen and (max-width: 1024px) {
   main .create__account__section .create__account__content h2 {
@@ -895,7 +1047,7 @@ footer .footer .footer__logo {
 }
 footer .footer .footer__nav__content {
   display: flex;
-  gap: 128px;
+  gap: 120px;
 }
 footer .footer .footer__nav__content .footer__nav__template {
   display: flex;
@@ -905,7 +1057,7 @@ footer .footer .footer__nav__content .footer__nav__template {
 }
 footer .footer .footer__nav__content .footer__nav__template h5 {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 12px;
   letter-spacing: 1px;
   color: #18181B;
@@ -915,10 +1067,16 @@ footer .footer .footer__nav__content .footer__nav__template a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 21px;
   color: #3F3F46;
   text-decoration: none;
+}
+footer .footer .footer__nav__content .footer__nav__template a svg path {
+  fill: #3F3F46;
+}
+footer .footer .footer__nav__content .footer__nav__template a:hover {
+  text-decoration: underline;
 }
 footer .footer .footer__nav__content .footer__nav__template img {
   display: block;
@@ -967,11 +1125,17 @@ footer .footer .footer__license p:nth-child(3) {
   }
   footer .footer .footer__nav__content {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 32px;
   }
   footer .footer .footer__nav__content .footer__nav__template {
     margin-bottom: 34px;
+  }
+}
+@media screen and (max-width: 444px) {
+  footer .footer .footer__nav__content .footer__nav__template {
+    align-items: center;
+    width: 100%;
   }
 }
 @media screen and (max-width: 580px) {
@@ -988,19 +1152,6 @@ footer .footer .footer__license p:nth-child(3) {
   footer .footer .footer__license p:nth-child(3) {
     margin: 6px 0px 16px 0px;
   }
-}
-
-::-webkit-scrollbar-track {
-  background-color: #fff; /*Цвет скролла*/
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px; /*Закругление ползунка*/
-  background-color: #ccc; /*Цвет ползунка*/
-}
-
-::-webkit-scrollbar {
-  width: 6px; /*Толщина скролла*/
 }
 
 * {
